@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Script/Item.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Plants/Forage.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 67, 193, 11, 10 )
+
+[resource]
+script = ExtResource( 1 )
+name = "Wood"
+stackable = true
+max_stack_size = 99
+texture = SubResource( 1 )
+type = 0
+subname = ""

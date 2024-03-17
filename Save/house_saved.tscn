@@ -1,0 +1,486 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Font/DungGeunMo.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Tileset/Farmhouse.tres" type="TileSet" id=2]
+[ext_resource path="res://Tileset/furnitures.tres" type="TileSet" id=3]
+[ext_resource path="res://Tileset/UI_tiles.tres" type="TileSet" id=4]
+[ext_resource path="res://Assets/MenuTiles.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Furnitures/TV.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Clock.png" type="Texture" id=7]
+[ext_resource path="res://Scene/Furnitures/Fireplace.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Script/Inventory/HotbarGrid.gd" type="Script" id=9]
+[ext_resource path="res://Script/House/Functional.gd" type="Script" id=10]
+[ext_resource path="res://Script/Inventory/Hotbar.gd" type="Script" id=11]
+[ext_resource path="res://Script/UI/PlayerUI.gd" type="Script" id=12]
+[ext_resource path="res://Script/Furniture/ChestGrid.gd" type="Script" id=13]
+[ext_resource path="res://Script/House/HouseHandler.gd" type="Script" id=14]
+[ext_resource path="res://Script/Furniture/InventoryGrid.gd" type="Script" id=15]
+[ext_resource path="res://Script/Inventory/InventoryGrid.gd" type="Script" id=16]
+[ext_resource path="res://Scene/Portal.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scene/Furnitures/Bed.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scene/PlayerUI.tscn" type="PackedScene" id=19]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 6, 2.5 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 72, 60 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+extra_spacing_char = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="TileSet" id=9]
+0/name = "MenuTiles.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 256 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 896, 64, 64 )
+
+[node name="HouseHandler" type="Node"]
+script = ExtResource( 14 )
+
+[node name="BlackBackGround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -8.0
+mouse_filter = 2
+color = Color( 0.0196078, 0.0117647, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 589838, 4, 0, 589839, 4, 1, 589840, 4, 0, 589841, 4, 1, 589842, 4, 0, 589843, 4, 1, 589844, 4, 0, 589845, 4, 1, 589846, 4, 0, 589847, 4, 1, 589848, 4, 0, 589849, 4, 1, 589850, 4, 0, 589851, 4, 1, 655374, 4, 65536, 655375, 4, 65537, 655376, 4, 65536, 655377, 4, 65537, 655378, 4, 65536, 655379, 4, 65537, 655380, 4, 65536, 655381, 4, 65537, 655382, 4, 65536, 655383, 4, 65537, 655384, 4, 65536, 655385, 4, 65537, 655386, 4, 65536, 655387, 4, 65537, 720910, 4, 0, 720911, 4, 1, 720912, 4, 0, 720913, 4, 1, 720914, 4, 0, 720915, 4, 1, 720916, 4, 0, 720917, 4, 1, 720918, 4, 0, 720919, 4, 1, 720920, 4, 0, 720921, 4, 1, 720922, 4, 0, 720923, 4, 1, 786446, 4, 65536, 786447, 4, 65537, 786448, 4, 65536, 786449, 4, 65537, 786450, 4, 65536, 786451, 4, 65537, 786452, 4, 65536, 786453, 4, 65537, 786454, 4, 65536, 786455, 4, 65537, 786456, 4, 65536, 786457, 4, 65537, 786458, 4, 65536, 786459, 4, 65537, 851982, 4, 0, 851983, 4, 1, 851984, 4, 0, 851985, 4, 1, 851986, 4, 0, 851987, 4, 1, 851988, 4, 0, 851989, 4, 1, 851990, 4, 0, 851991, 4, 1, 851992, 4, 0, 851993, 4, 1, 851994, 4, 0, 851995, 4, 1, 917518, 4, 65536, 917519, 4, 65537, 917520, 4, 65536, 917521, 4, 65537, 917522, 4, 65536, 917523, 4, 65537, 917524, 4, 65536, 917525, 4, 65537, 917526, 4, 65536, 917527, 4, 65537, 917528, 4, 65536, 917529, 4, 65537, 917530, 4, 65536, 917531, 4, 65537, 983054, 4, 0, 983055, 4, 1, 983056, 4, 0, 983057, 4, 1, 983058, 4, 0, 983059, 4, 1, 983060, 4, 0, 983061, 4, 1, 983062, 4, 0, 983063, 4, 1, 983064, 4, 0, 983065, 4, 1, 983066, 4, 0, 983067, 4, 1, 1048590, 4, 65536, 1048591, 4, 65537, 1048592, 4, 65536, 1048593, 4, 65537, 1048594, 4, 65536, 1048595, 4, 65537, 1048596, 4, 65536, 1048597, 4, 65537, 1048598, 4, 65536, 1048599, 4, 65537, 1048600, 4, 65536, 1048601, 4, 65537, 1048602, 4, 65536, 1048603, 4, 65537, 1114129, 4, 0, 1114130, 4, 0 )
+
+[node name="Floor_Furniture" type="TileMap" parent="Floor"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 983057, 0, 0 )
+
+[node name="Wall" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 1, 0, 458776, 1, 0, 458777, 1, 0, 458778, 1, 0, 458779, 1, 0 )
+
+[node name="Wall_Furniture" type="TileMap" parent="Wall"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458771, 7, 0, 458775, 8, 0 )
+
+[node name="Rear_Outline" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393230, 3, 10, 393231, 3, 10, 393232, 3, 10, 393233, 3, 10, 393234, 3, 10, 393235, 3, 10, 393236, 3, 10, 393237, 3, 10, 393238, 3, 10, 393239, 3, 10, 393240, 3, 10, 393241, 3, 10, 393242, 3, 10, 393243, 3, 10 )
+
+[node name="House_Functional" type="YSort" parent="."]
+script = ExtResource( 10 )
+
+[node name="baseGrid" type="TileMap" parent="House_Functional"]
+cell_size = Vector2( 8, 8 )
+format = 1
+
+[node name="Selection" type="Sprite" parent="House_Functional"]
+self_modulate = Color( 1, 1, 1, 0.694118 )
+
+[node name="Placable" type="Sprite" parent="House_Functional/Selection"]
+scale = Vector2( 0.25, 0.25 )
+offset = Vector2( 0, 32 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="Area2D" type="Area2D" parent="House_Functional/Selection"]
+position = Vector2( 0, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House_Functional/Selection/Area2D"]
+visible = false
+scale = Vector2( 0.99, 0.99 )
+shape = SubResource( 4 )
+
+[node name="non_Functional" type="TileMap" parent="House_Functional"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( 589838, 6, 0, 589841, 6, 0, 720911, 3, 0, 786446, 2, 0 )
+
+[node name="Bed" type="StaticBody2D" parent="House_Functional" instance=ExtResource( 18 )]
+visible = false
+position = Vector2( 432, 224 )
+
+[node name="Fireplace" type="StaticBody2D" parent="House_Functional" instance=ExtResource( 8 )]
+position = Vector2( 432, 136 )
+
+[node name="TV" type="StaticBody2D" parent="House_Functional" instance=ExtResource( 6 )]
+position = Vector2( 256, 152 )
+
+[node name="Front_Outline" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393229, 3, 9, 393244, 3, 11, 458765, 3, 131072, 458780, 3, 131076, 524301, 3, 131072, 524316, 3, 131076, 589837, 3, 131072, 589852, 3, 131076, 655373, 3, 131072, 655388, 3, 131076, 720909, 3, 131072, 720924, 3, 131076, 786445, 3, 131072, 786460, 3, 131076, 851981, 3, 131072, 851996, 3, 131076, 917517, 3, 131072, 917532, 3, 131076, 983053, 3, 131072, 983068, 3, 131076, 1048589, 3, 196608, 1048590, 3, 327685, 1048591, 3, 327685, 1048592, 3, 327682, 1048595, 3, 327683, 1048596, 3, 327685, 1048597, 3, 327685, 1048598, 3, 327685, 1048599, 3, 327685, 1048600, 3, 327685, 1048601, 3, 327685, 1048602, 3, 327685, 1048603, 3, 327685, 1048604, 3, 262146, 1114128, 3, 196608, 1114129, 3, 327685, 1114130, 3, 393219, 1114131, 3, 262146 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "FadeIn"
+anims/FadeIn = SubResource( 1 )
+anims/FadeOut = SubResource( 3 )
+anims/RESET = SubResource( 2 )
+
+[node name="Portal" parent="." instance=ExtResource( 17 )]
+collision_layer = 64
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Portal" index="0"]
+position = Vector2( 288, 278.5 )
+shape = SubResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="PlayerUI" parent="CanvasLayer" instance=ExtResource( 19 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Clock" parent="CanvasLayer/PlayerUI" index="0"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -640.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" parent="CanvasLayer/PlayerUI/Clock" index="0"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -114.0
+margin_top = 8.0
+margin_right = -42.0
+margin_bottom = 68.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current_time" parent="CanvasLayer/PlayerUI/Clock" index="1"]
+margin_left = 576.0
+margin_top = 47.0
+margin_right = 616.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 0.532227, 0.322121, 0.0665283, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "06:02"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current_date" parent="CanvasLayer/PlayerUI/Clock" index="2"]
+margin_left = 568.0
+margin_top = 13.0
+margin_right = 624.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 0.532227, 0.322121, 0.0665283, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Tue.9"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current_gold" parent="CanvasLayer/PlayerUI/Clock" index="3"]
+margin_left = 551.0
+margin_top = 77.0
+margin_right = 622.0
+margin_bottom = 93.0
+custom_colors/font_color = Color( 0.423529, 0.141176, 0.141176, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "500"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGroundShadow" parent="CanvasLayer/PlayerUI" index="1"]
+margin_right = 640.0
+margin_bottom = 360.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" parent="CanvasLayer/PlayerUI" index="2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backpack" parent="CanvasLayer/PlayerUI/Inventory" index="0"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteRect" parent="CanvasLayer/PlayerUI/Inventory/Backpack" index="0"]
+margin_left = 98.0
+margin_top = 125.0
+margin_right = 544.0
+margin_bottom = 253.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" parent="CanvasLayer/PlayerUI/Inventory/Backpack" index="1"]
+position = Vector2( 81, 45 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( 131072, 0, 0, 131073, 0, 2, 131074, 0, 2, 131075, 0, 2, 131076, 0, 2, 131077, 0, 2, 131078, 0, 2, 131079, 0, 2, 131080, 0, 2, 131081, 0, 2, 131082, 0, 2, 131083, 0, 2, 131084, 0, 2, 131085, 0, 2, 131086, 0, 3, 196608, 0, 131072, 196622, 0, 131075, 262144, 0, 131072, 262158, 0, 131075, 327680, 0, 131072, 327694, 0, 131075, 393216, 0, 196608, 393217, 0, 196610, 393218, 0, 196610, 393219, 0, 196610, 393220, 0, 196610, 393221, 0, 196610, 393222, 0, 196610, 393223, 0, 196610, 393224, 0, 196610, 393225, 0, 196610, 393226, 0, 196610, 393227, 0, 196610, 393228, 0, 196610, 393229, 0, 196610, 393230, 0, 196611 )
+
+[node name="GridContainer" parent="CanvasLayer/PlayerUI/Inventory/Backpack" index="2"]
+margin_left = 118.0
+margin_top = 140.0
+margin_right = 524.0
+margin_bottom = 255.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 12
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hotbar" parent="CanvasLayer/PlayerUI/Inventory" index="1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -192.0
+margin_top = -54.0
+margin_right = 192.0
+margin_bottom = -22.0
+mouse_filter = 1
+color = Color( 0.952941, 0.901961, 0.870588, 1 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+selected_slot = 0
+
+[node name="Outline" parent="CanvasLayer/PlayerUI/Inventory/Hotbar" index="0"]
+position = Vector2( 16, 16 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 9 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 2, -65535, 0, 2, -65534, 0, 2, -65533, 0, 2, -65532, 0, 2, -65531, 0, 2, -65530, 0, 2, -65529, 0, 2, -65528, 0, 2, -65527, 0, 2, -65526, 0, 2, -65525, 0, 3, 65535, 0, 196608, 0, 0, 196610, 1, 0, 196610, 2, 0, 196610, 3, 0, 196610, 4, 0, 196610, 5, 0, 196610, 6, 0, 196610, 7, 0, 196610, 8, 0, 196610, 9, 0, 196610, 10, 0, 196610, 11, 0, 196611 )
+
+[node name="GridContainer" parent="CanvasLayer/PlayerUI/Inventory/Hotbar" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 12
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selected" parent="CanvasLayer/PlayerUI/Inventory/Hotbar" index="2"]
+margin_right = 32.0
+margin_bottom = 32.0
+mouse_filter = 2
+texture = SubResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChestInteraction" parent="CanvasLayer/PlayerUI" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -640.0
+margin_bottom = -360.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" parent="CanvasLayer/PlayerUI/ChestInteraction" index="0"]
+margin_left = 98.0
+margin_top = 52.0
+margin_right = 544.0
+margin_bottom = 307.0
+color = Color( 1, 0.94902, 0.94902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" parent="CanvasLayer/PlayerUI/ChestInteraction" index="1"]
+position = Vector2( 81, 100 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( -131072, 0, 0, -131071, 0, 2, -131070, 0, 2, -131069, 0, 2, -131068, 0, 2, -131067, 0, 2, -131066, 0, 2, -131065, 0, 2, -131064, 0, 2, -131063, 0, 2, -131062, 0, 2, -131061, 0, 2, -131060, 0, 2, -131059, 0, 2, -131058, 0, 3, -65536, 0, 131072, -65522, 0, 131075, 0, 0, 131072, 14, 0, 131075, 65536, 0, 131072, 65550, 0, 131075, 131072, 0, 65536, 131073, 0, 65538, 131074, 0, 65538, 131075, 0, 65538, 131076, 0, 65538, 131077, 0, 65538, 131078, 0, 65538, 131079, 0, 65538, 131080, 0, 65538, 131081, 0, 65538, 131082, 0, 65538, 131083, 0, 65538, 131084, 0, 65538, 131085, 0, 65538, 131086, 0, 65539, 196608, 0, 131072, 196622, 0, 131075, 262144, 0, 131072, 262158, 0, 131075, 327680, 0, 131072, 327694, 0, 131075, 393216, 0, 196608, 393217, 0, 196610, 393218, 0, 196610, 393219, 0, 196610, 393220, 0, 196610, 393221, 0, 196610, 393222, 0, 196610, 393223, 0, 196610, 393224, 0, 196610, 393225, 0, 196610, 393226, 0, 196610, 393227, 0, 196610, 393228, 0, 196610, 393229, 0, 196610, 393230, 0, 196611 )
+
+[node name="ChestGrid" parent="CanvasLayer/PlayerUI/ChestInteraction" index="2"]
+margin_left = 107.0
+margin_top = 62.0
+margin_right = 535.0
+margin_bottom = 166.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 12
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryGrid" parent="CanvasLayer/PlayerUI/ChestInteraction" index="3"]
+margin_left = 107.0
+margin_top = 194.0
+margin_right = 535.0
+margin_bottom = 298.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 12
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" parent="CanvasLayer/PlayerUI" index="4"]
+margin_left = 19.0
+margin_top = 14.0
+margin_right = 74.0
+margin_bottom = 34.0
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" parent="CanvasLayer/PlayerUI" index="5"]
+margin_left = 15.0
+margin_top = 41.0
+margin_right = 79.0
+margin_bottom = 61.0
+text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextDay" parent="CanvasLayer/PlayerUI" index="6"]
+margin_left = 14.0
+margin_top = 68.0
+margin_right = 80.0
+margin_bottom = 88.0
+text = "NextDay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]
+
+[editable path="Portal"]
+[editable path="CanvasLayer/PlayerUI"]

@@ -1,0 +1,177 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Theme/PlayerAppearance.gdshader" type="Shader" id=1]
+[ext_resource path="res://Script/Intro/PlayerAppearance.gd" type="Script" id=2]
+[ext_resource path="res://Assets/mobileatlas_manually_made.png" type="Texture" id=3]
+[ext_resource path="res://Assets/daybg.png" type="Texture" id=4]
+[ext_resource path="res://Player/Player.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Skin_Palettes/skin0.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 293, 5, 16, 32 )
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 1 )
+shader_param/original_eye = Color( 0.407843, 0.168627, 0.0588235, 1 )
+shader_param/eye_color = Color( 0.407843, 0.168627, 0.0588235, 1 )
+shader_param/original_palette = ExtResource( 6 )
+shader_param/replace_palette = ExtResource( 6 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 5, 5, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 5 )
+region = Rect2( 783, 394, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 5 )
+region = Rect2( 783, 5, 16, 32 )
+
+[sub_resource type="ShaderMaterial" id=34]
+shader = ExtResource( 1 )
+shader_param/original_eye = null
+shader_param/eye_color = null
+shader_param/original_palette = ExtResource( 6 )
+shader_param/replace_palette = ExtResource( 6 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 101, 5, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 5 )
+region = Rect2( 298, 746, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 87, 21, 20, 21 )
+
+[node name="Appearance" type="TextureRect"]
+margin_left = 184.0
+margin_top = 48.0
+margin_right = 312.0
+margin_bottom = 240.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerAppearance" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.5
+margin_top = 32.5
+margin_right = -79.5
+margin_bottom = -127.5
+rect_min_size = Vector2( 16, 32 )
+rect_scale = Vector2( 4, 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leg" type="TextureRect" parent="PlayerAppearance"]
+modulate = Color( 0.129089, 0.151513, 0.703125, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="TextureRect" parent="PlayerAppearance"]
+material = SubResource( 29 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shirts" type="TextureRect" parent="PlayerAppearance"]
+margin_left = 4.0
+margin_top = 15.0
+margin_right = 12.0
+margin_bottom = 23.0
+texture = SubResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hair" type="TextureRect" parent="PlayerAppearance"]
+modulate = Color( 0.72, 0.3456, 0.3456, 1 )
+margin_right = 16.0
+margin_bottom = 32.0
+texture = SubResource( 32 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arm" type="TextureRect" parent="PlayerAppearance"]
+material = SubResource( 34 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 30 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acc" type="TextureRect" parent="PlayerAppearance"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.875
+margin_bottom = 1.875
+texture = SubResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnClockwise" type="TextureButton" parent="."]
+margin_left = -20.0
+margin_top = 162.5
+margin_right = 20.0
+margin_bottom = 202.5
+texture_normal = SubResource( 19 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnAntiClockwise" type="TextureButton" parent="."]
+margin_left = 107.5
+margin_top = 162.5
+margin_right = 147.5
+margin_bottom = 202.5
+texture_normal = SubResource( 20 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Random" type="TextureButton" parent="."]
+margin_left = -45.0
+margin_top = -27.5
+margin_right = -5.0
+margin_bottom = 12.5
+texture_normal = SubResource( 21 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

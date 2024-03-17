@@ -1,0 +1,300 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Script/Inventory/Hotbar.gd" type="Script" id=1]
+[ext_resource path="res://Assets/MenuTiles.png" type="Texture" id=2]
+[ext_resource path="res://Script/Inventory/InventoryGrid.gd" type="Script" id=3]
+[ext_resource path="res://Script/UI/PlayerUI.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Clock.png" type="Texture" id=5]
+[ext_resource path="res://Font/DungGeunMo.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Tileset/UI_tiles.tres" type="TileSet" id=7]
+[ext_resource path="res://Script/Inventory/HotbarGrid.gd" type="Script" id=8]
+[ext_resource path="res://Script/Furniture/ChestGrid.gd" type="Script" id=9]
+[ext_resource path="res://Script/Furniture/InventoryGrid.gd" type="Script" id=10]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 72, 60 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=7]
+extra_spacing_char = 1
+font_data = ExtResource( 6 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "MenuTiles.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 256 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 896, 64, 64 )
+
+[node name="PlayerUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Clock" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -640.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Clock"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -114.0
+margin_top = 8.0
+margin_right = -42.0
+margin_bottom = 68.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current_time" type="Label" parent="Clock"]
+margin_left = 576.0
+margin_top = 47.0
+margin_right = 616.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 0.532227, 0.322121, 0.0665283, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "06:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current_date" type="Label" parent="Clock"]
+margin_left = 568.0
+margin_top = 13.0
+margin_right = 624.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 0.532227, 0.322121, 0.0665283, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Mon.1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current_gold" type="Label" parent="Clock"]
+margin_left = 551.0
+margin_top = 77.0
+margin_right = 622.0
+margin_bottom = 93.0
+custom_colors/font_color = Color( 0.423529, 0.141176, 0.141176, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "12345678"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGroundShadow" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backpack" type="Control" parent="Inventory"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteRect" type="ColorRect" parent="Inventory/Backpack"]
+margin_left = 98.0
+margin_top = 125.0
+margin_right = 544.0
+margin_bottom = 253.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="Inventory/Backpack"]
+position = Vector2( 81, 45 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 7 )
+format = 1
+tile_data = PoolIntArray( 131072, 0, 0, 131073, 0, 2, 131074, 0, 2, 131075, 0, 2, 131076, 0, 2, 131077, 0, 2, 131078, 0, 2, 131079, 0, 2, 131080, 0, 2, 131081, 0, 2, 131082, 0, 2, 131083, 0, 2, 131084, 0, 2, 131085, 0, 2, 131086, 0, 3, 196608, 0, 131072, 196622, 0, 131075, 262144, 0, 131072, 262158, 0, 131075, 327680, 0, 131072, 327694, 0, 131075, 393216, 0, 196608, 393217, 0, 196610, 393218, 0, 196610, 393219, 0, 196610, 393220, 0, 196610, 393221, 0, 196610, 393222, 0, 196610, 393223, 0, 196610, 393224, 0, 196610, 393225, 0, 196610, 393226, 0, 196610, 393227, 0, 196610, 393228, 0, 196610, 393229, 0, 196610, 393230, 0, 196611 )
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/Backpack"]
+margin_left = 118.0
+margin_top = 140.0
+margin_right = 524.0
+margin_bottom = 255.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 12
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hotbar" type="ColorRect" parent="Inventory"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -192.0
+margin_top = -54.0
+margin_right = 192.0
+margin_bottom = -22.0
+mouse_filter = 1
+color = Color( 0.952941, 0.901961, 0.870588, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Outline" type="TileMap" parent="Inventory/Hotbar"]
+position = Vector2( 16, 16 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 4 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 2, -65535, 0, 2, -65534, 0, 2, -65533, 0, 2, -65532, 0, 2, -65531, 0, 2, -65530, 0, 2, -65529, 0, 2, -65528, 0, 2, -65527, 0, 2, -65526, 0, 2, -65525, 0, 3, 65535, 0, 196608, 0, 0, 196610, 1, 0, 196610, 2, 0, 196610, 3, 0, 196610, 4, 0, 196610, 5, 0, 196610, 6, 0, 196610, 7, 0, 196610, 8, 0, 196610, 9, 0, 196610, 10, 0, 196610, 11, 0, 196611 )
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/Hotbar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 12
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selected" type="TextureRect" parent="Inventory/Hotbar"]
+margin_right = 32.0
+margin_bottom = 32.0
+mouse_filter = 2
+texture = SubResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChestInteraction" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -640.0
+margin_bottom = -360.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ChestInteraction"]
+margin_left = 98.0
+margin_top = 52.0
+margin_right = 544.0
+margin_bottom = 307.0
+color = Color( 1, 0.94902, 0.94902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="ChestInteraction"]
+position = Vector2( 81, 100 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 7 )
+format = 1
+tile_data = PoolIntArray( -131072, 0, 0, -131071, 0, 2, -131070, 0, 2, -131069, 0, 2, -131068, 0, 2, -131067, 0, 2, -131066, 0, 2, -131065, 0, 2, -131064, 0, 2, -131063, 0, 2, -131062, 0, 2, -131061, 0, 2, -131060, 0, 2, -131059, 0, 2, -131058, 0, 3, -65536, 0, 131072, -65522, 0, 131075, 0, 0, 131072, 14, 0, 131075, 65536, 0, 131072, 65550, 0, 131075, 131072, 0, 65536, 131073, 0, 65538, 131074, 0, 65538, 131075, 0, 65538, 131076, 0, 65538, 131077, 0, 65538, 131078, 0, 65538, 131079, 0, 65538, 131080, 0, 65538, 131081, 0, 65538, 131082, 0, 65538, 131083, 0, 65538, 131084, 0, 65538, 131085, 0, 65538, 131086, 0, 65539, 196608, 0, 131072, 196622, 0, 131075, 262144, 0, 131072, 262158, 0, 131075, 327680, 0, 131072, 327694, 0, 131075, 393216, 0, 196608, 393217, 0, 196610, 393218, 0, 196610, 393219, 0, 196610, 393220, 0, 196610, 393221, 0, 196610, 393222, 0, 196610, 393223, 0, 196610, 393224, 0, 196610, 393225, 0, 196610, 393226, 0, 196610, 393227, 0, 196610, 393228, 0, 196610, 393229, 0, 196610, 393230, 0, 196611 )
+
+[node name="ChestGrid" type="GridContainer" parent="ChestInteraction"]
+margin_left = 107.0
+margin_top = 62.0
+margin_right = 535.0
+margin_bottom = 166.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 12
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryGrid" type="GridContainer" parent="ChestInteraction"]
+margin_left = 107.0
+margin_top = 194.0
+margin_right = 535.0
+margin_bottom = 298.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 12
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Button" parent="."]
+margin_left = 19.0
+margin_top = 14.0
+margin_right = 74.0
+margin_bottom = 34.0
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="."]
+margin_left = 15.0
+margin_top = 41.0
+margin_right = 79.0
+margin_bottom = 61.0
+text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextDay" type="Button" parent="."]
+margin_left = 14.0
+margin_top = 68.0
+margin_right = 80.0
+margin_bottom = 88.0
+text = "NextDay"
+__meta__ = {
+"_edit_use_anchors_": false
+}

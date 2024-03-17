@@ -1,0 +1,16 @@
+command form
+
+"House(x,y)->Farm(x,y)"
+
+1. parse
+House(x,y) / Farm(x,y)
+
+2. read information
+
+Map : House
+Position : (x,y)
+Destination : portal
+
+Map : Farm
+Position : portal
+Destination : (x,y)

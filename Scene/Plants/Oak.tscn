@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Plants/Trees & Plants.png" type="Texture" id=1]
+[ext_resource path="res://Script/Plants/Oak.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 49, 111, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 33, 79, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 17, 15, 48, 64 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 8.0
+height = 4.0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 7 )
+
+[node name="Oak" type="StaticBody2D"]
+collision_layer = 256
+script = ExtResource( 2 )
+
+[node name="Bottom" type="Sprite" parent="."]
+position = Vector2( 0, 25 )
+texture = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0, 34 )
+
+[node name="Middle" type="Sprite" parent="Position2D"]
+position = Vector2( 0, -9 )
+texture = SubResource( 2 )
+
+[node name="Top" type="Sprite" parent="Position2D"]
+position = Vector2( 0, -57 )
+texture = SubResource( 3 )
+
+[node name="TreeHurtbox" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeHurtbox"]
+position = Vector2( 0, 33 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 34 )
+shape = SubResource( 5 )

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Script/Item.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Tools/Axe.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Axe"
+stackable = false
+max_stack_size = 1
+texture = ExtResource( 2 )
+type = 2
+subname = ""
+weapon_code = 0
+size = Vector2( 0, 0 )

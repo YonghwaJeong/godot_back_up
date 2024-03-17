@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=10 format=2]
+
+[ext_resource path="res://Assets/color_bar.png" type="Texture" id=1]
+[ext_resource path="res://Assets/mobileatlas_manually_made.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 63, 60, 7, 7 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 70, 60, 7, 7 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 70, 60, 7, 7 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 37, 506, 822, 69 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = SubResource( 5 )
+region_rect = Rect2( 0, 0, 1, 1 )
+margin_left = 820.0
+margin_top = 69.0
+
+[resource]
+HSlider/icons/grabber = SubResource( 1 )
+HSlider/icons/grabber_disabled = SubResource( 8 )
+HSlider/icons/grabber_highlight = SubResource( 2 )
+HSlider/styles/grabber_area = SubResource( 3 )
+HSlider/styles/grabber_area_highlight = SubResource( 4 )
+HSlider/styles/slider = SubResource( 6 )

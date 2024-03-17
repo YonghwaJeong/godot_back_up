@@ -1,0 +1,109 @@
+[ {
+"item": Resource( "res://Item/Scythe.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/Hoe.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/Pickaxe.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/WateringCan.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/Axe.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/Chest.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/Bed.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/ParsnipSeed.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/KaleSeed.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/PotatoSeed.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/CauliflowerSeed.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/GarlicSeed.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/RhubarbSeed.tres"),
+"quantity": 1
+}, {
+"item": Resource( "res://Item/Parsnip.tres"),
+"quantity": 6
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+}, {
+"item": null,
+"quantity": 0
+} ]

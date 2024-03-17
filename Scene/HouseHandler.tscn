@@ -1,0 +1,183 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Tileset/Farmhouse.tres" type="TileSet" id=1]
+[ext_resource path="res://Tileset/furnitures.tres" type="TileSet" id=2]
+[ext_resource path="res://Scene/Furnitures/Bed.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Furnitures/Fireplace.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Furnitures/TV.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Others/Placable.png" type="Texture" id=6]
+[ext_resource path="res://Script/House/Functional.gd" type="Script" id=7]
+[ext_resource path="res://Scene/PlayerUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scene/Portal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Script/House/HouseHandler.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="HouseHandler" type="Node"]
+script = ExtResource( 10 )
+
+[node name="BlackBackGround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -8.0
+mouse_filter = 2
+color = Color( 0.0196078, 0.0117647, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 589838, 4, 0, 589839, 4, 1, 589840, 4, 0, 589841, 4, 1, 589842, 4, 0, 589843, 4, 1, 589844, 4, 0, 589845, 4, 1, 589846, 4, 0, 589847, 4, 1, 589848, 4, 0, 589849, 4, 1, 589850, 4, 0, 589851, 4, 1, 655374, 4, 65536, 655375, 4, 65537, 655376, 4, 65536, 655377, 4, 65537, 655378, 4, 65536, 655379, 4, 65537, 655380, 4, 65536, 655381, 4, 65537, 655382, 4, 65536, 655383, 4, 65537, 655384, 4, 65536, 655385, 4, 65537, 655386, 4, 65536, 655387, 4, 65537, 720910, 4, 0, 720911, 4, 1, 720912, 4, 0, 720913, 4, 1, 720914, 4, 0, 720915, 4, 1, 720916, 4, 0, 720917, 4, 1, 720918, 4, 0, 720919, 4, 1, 720920, 4, 0, 720921, 4, 1, 720922, 4, 0, 720923, 4, 1, 786446, 4, 65536, 786447, 4, 65537, 786448, 4, 65536, 786449, 4, 65537, 786450, 4, 65536, 786451, 4, 65537, 786452, 4, 65536, 786453, 4, 65537, 786454, 4, 65536, 786455, 4, 65537, 786456, 4, 65536, 786457, 4, 65537, 786458, 4, 65536, 786459, 4, 65537, 851982, 4, 0, 851983, 4, 1, 851984, 4, 0, 851985, 4, 1, 851986, 4, 0, 851987, 4, 1, 851988, 4, 0, 851989, 4, 1, 851990, 4, 0, 851991, 4, 1, 851992, 4, 0, 851993, 4, 1, 851994, 4, 0, 851995, 4, 1, 917518, 4, 65536, 917519, 4, 65537, 917520, 4, 65536, 917521, 4, 65537, 917522, 4, 65536, 917523, 4, 65537, 917524, 4, 65536, 917525, 4, 65537, 917526, 4, 65536, 917527, 4, 65537, 917528, 4, 65536, 917529, 4, 65537, 917530, 4, 65536, 917531, 4, 65537, 983054, 4, 0, 983055, 4, 1, 983056, 4, 0, 983057, 4, 1, 983058, 4, 0, 983059, 4, 1, 983060, 4, 0, 983061, 4, 1, 983062, 4, 0, 983063, 4, 1, 983064, 4, 0, 983065, 4, 1, 983066, 4, 0, 983067, 4, 1, 1048590, 4, 65536, 1048591, 4, 65537, 1048592, 4, 65536, 1048593, 4, 65537, 1048594, 4, 65536, 1048595, 4, 65537, 1048596, 4, 65536, 1048597, 4, 65537, 1048598, 4, 65536, 1048599, 4, 65537, 1048600, 4, 65536, 1048601, 4, 65537, 1048602, 4, 65536, 1048603, 4, 65537, 1114129, 4, 0, 1114130, 4, 0 )
+
+[node name="Floor_Furniture" type="TileMap" parent="Floor"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 983057, 0, 0 )
+
+[node name="Wall" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 1, 0, 458776, 1, 0, 458777, 1, 0, 458778, 1, 0, 458779, 1, 0 )
+
+[node name="Wall_Furniture" type="TileMap" parent="Wall"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458771, 7, 0, 458775, 8, 0 )
+
+[node name="Rear_Outline" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393230, 3, 10, 393231, 3, 10, 393232, 3, 10, 393233, 3, 10, 393234, 3, 10, 393235, 3, 10, 393236, 3, 10, 393237, 3, 10, 393238, 3, 10, 393239, 3, 10, 393240, 3, 10, 393241, 3, 10, 393242, 3, 10, 393243, 3, 10 )
+
+[node name="House_Functional" type="YSort" parent="."]
+script = ExtResource( 7 )
+
+[node name="baseGrid" type="TileMap" parent="House_Functional"]
+cell_size = Vector2( 8, 8 )
+format = 1
+
+[node name="Selection" type="Sprite" parent="House_Functional"]
+self_modulate = Color( 1, 1, 1, 0.694118 )
+
+[node name="Placable" type="Sprite" parent="House_Functional/Selection"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, 32 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="Area2D" type="Area2D" parent="House_Functional/Selection"]
+position = Vector2( 0, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House_Functional/Selection/Area2D"]
+scale = Vector2( 0.99, 0.99 )
+shape = SubResource( 4 )
+
+[node name="non_Functional" type="TileMap" parent="House_Functional"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( 589838, 6, 0, 589841, 6, 0, 720911, 3, 0, 786446, 2, 0 )
+
+[node name="Bed" parent="House_Functional" instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 432, 224 )
+
+[node name="Fireplace" parent="House_Functional" instance=ExtResource( 4 )]
+position = Vector2( 432, 136 )
+
+[node name="TV" parent="House_Functional" instance=ExtResource( 5 )]
+position = Vector2( 256, 152 )
+
+[node name="Front_Outline" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393229, 3, 9, 393244, 3, 11, 458765, 3, 131072, 458780, 3, 131076, 524301, 3, 131072, 524316, 3, 131076, 589837, 3, 131072, 589852, 3, 131076, 655373, 3, 131072, 655388, 3, 131076, 720909, 3, 131072, 720924, 3, 131076, 786445, 3, 131072, 786460, 3, 131076, 851981, 3, 131072, 851996, 3, 131076, 917517, 3, 131072, 917532, 3, 131076, 983053, 3, 131072, 983068, 3, 131076, 1048589, 3, 196608, 1048590, 3, 327685, 1048591, 3, 327685, 1048592, 3, 327682, 1048595, 3, 327683, 1048596, 3, 327685, 1048597, 3, 327685, 1048598, 3, 327685, 1048599, 3, 327685, 1048600, 3, 327685, 1048601, 3, 327685, 1048602, 3, 327685, 1048603, 3, 327685, 1048604, 3, 262146, 1114128, 3, 196608, 1114129, 3, 327685, 1114130, 3, 393219, 1114131, 3, 262146 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "FadeIn"
+anims/FadeIn = SubResource( 1 )
+anims/FadeOut = SubResource( 3 )
+anims/RESET = SubResource( 2 )
+
+[node name="Portal" parent="." instance=ExtResource( 9 )]
+
+[node name="CollisionShape2D" parent="Portal" index="0"]
+position = Vector2( 288, 278.5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="PlayerUI" parent="CanvasLayer" instance=ExtResource( 8 )]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]
+
+[editable path="Portal"]
+[editable path="CanvasLayer/PlayerUI"]

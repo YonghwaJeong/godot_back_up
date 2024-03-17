@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tileset/UI_tiles.tres" type="TileSet" id=1]
+
+[node name="ChestInteraction" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -640.0
+margin_bottom = -360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 98.0
+margin_top = 52.0
+margin_right = 544.0
+margin_bottom = 307.0
+color = Color( 1, 0.94902, 0.94902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 81, 100 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -131072, 0, 0, -131071, 0, 2, -131070, 0, 2, -131069, 0, 2, -131068, 0, 2, -131067, 0, 2, -131066, 0, 2, -131065, 0, 2, -131064, 0, 2, -131063, 0, 2, -131062, 0, 2, -131061, 0, 2, -131060, 0, 2, -131059, 0, 2, -131058, 0, 3, -65536, 0, 131072, -65522, 0, 131075, 0, 0, 131072, 14, 0, 131075, 65536, 0, 131072, 65550, 0, 131075, 131072, 0, 65536, 131073, 0, 65538, 131074, 0, 65538, 131075, 0, 65538, 131076, 0, 65538, 131077, 0, 65538, 131078, 0, 65538, 131079, 0, 65538, 131080, 0, 65538, 131081, 0, 65538, 131082, 0, 65538, 131083, 0, 65538, 131084, 0, 65538, 131085, 0, 65538, 131086, 0, 65539, 196608, 0, 131072, 196622, 0, 131075, 262144, 0, 131072, 262158, 0, 131075, 327680, 0, 131072, 327694, 0, 131075, 393216, 0, 196608, 393217, 0, 196610, 393218, 0, 196610, 393219, 0, 196610, 393220, 0, 196610, 393221, 0, 196610, 393222, 0, 196610, 393223, 0, 196610, 393224, 0, 196610, 393225, 0, 196610, 393226, 0, 196610, 393227, 0, 196610, 393228, 0, 196610, 393229, 0, 196610, 393230, 0, 196611 )
+
+[node name="ChestGrid" type="GridContainer" parent="."]
+margin_left = 107.0
+margin_top = 62.0
+margin_right = 535.0
+margin_bottom = 166.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryGrid" type="GridContainer" parent="."]
+margin_left = 107.0
+margin_top = 194.0
+margin_right = 535.0
+margin_bottom = 298.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}

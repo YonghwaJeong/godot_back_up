@@ -1,0 +1,26 @@
+[gd_resource type="AnimationNodeBlendSpace2D" load_steps=5 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=57]
+animation = "Tool_UP"
+
+[sub_resource type="AnimationNodeAnimation" id=58]
+animation = "Tool_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=59]
+animation = "Tool_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=60]
+animation = "Tool_Down"
+
+[resource]
+blend_point_0/node = SubResource( 57 )
+blend_point_0/pos = Vector2( 0, -1.1 )
+blend_point_1/node = SubResource( 58 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 59 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 60 )
+blend_point_3/pos = Vector2( 0, 1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1

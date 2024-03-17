@@ -1,0 +1,1323 @@
+[gd_scene load_steps=80 format=2]
+
+[ext_resource path="res://Assets/Intro.png" type="Texture" id=1]
+[ext_resource path="res://Assets/TitleButtons.png" type="Texture" id=2]
+[ext_resource path="res://Assets/TitleButtons_en.png" type="Texture" id=3]
+[ext_resource path="res://Scene/IntroButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Script/Intro/New_Button.gd" type="Script" id=5]
+[ext_resource path="res://Script/Intro/Load_Button.gd" type="Script" id=6]
+[ext_resource path="res://Script/Intro/Exit_Button.gd" type="Script" id=7]
+[ext_resource path="res://Assets/logo.png" type="Texture" id=8]
+[ext_resource path="res://Script/Intro/Intro.gd" type="Script" id=9]
+[ext_resource path="res://Tileset/UI_tiles.tres" type="TileSet" id=10]
+[ext_resource path="res://Assets/MenuTiles.png" type="Texture" id=11]
+[ext_resource path="res://Script/Intro/Back_Button.gd" type="Script" id=12]
+[ext_resource path="res://Theme/PlayerAppearance.gdshader" type="Shader" id=13]
+[ext_resource path="res://Player/Player.png" type="Texture" id=14]
+[ext_resource path="res://Assets/mobileatlas_manually_made.png" type="Texture" id=15]
+[ext_resource path="res://Font/DungGeunMo.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Theme/LineEdit.tres" type="Theme" id=17]
+[ext_resource path="res://Script/Intro/LineEditor.gd" type="Script" id=18]
+[ext_resource path="res://Assets/Pet/Marill.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Pet/Minccino.png" type="Texture" id=20]
+[ext_resource path="res://Script/Intro/PetSelection.gd" type="Script" id=21]
+[ext_resource path="res://Theme/Label.tres" type="Theme" id=22]
+[ext_resource path="res://Script/Intro/PlayerAppearance.gd" type="Script" id=23]
+[ext_resource path="res://Assets/daybg.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Skin_Palettes/skin0.png" type="Texture" id=25]
+[ext_resource path="res://Script/Intro/Skin_count.gd" type="Script" id=26]
+[ext_resource path="res://Theme/Get_rid_of.tres" type="Shader" id=27]
+[ext_resource path="res://Assets/Pet/Turtwig.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Pet/Ditto.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Shadows/MediumShadow.png" type="Texture" id=30]
+[ext_resource path="res://Script/Intro/Hair_count.gd" type="Script" id=31]
+[ext_resource path="res://Script/Intro/Shirts_count.gd" type="Script" id=32]
+[ext_resource path="res://Script/Intro/Acc_count.gd" type="Script" id=33]
+[ext_resource path="res://Scene/HSVmodulator.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Script/Intro/Eyes_color.gd" type="Script" id=35]
+[ext_resource path="res://Script/Intro/Pants_color.gd" type="Script" id=36]
+[ext_resource path="res://Assets/Cursors.png" type="Texture" id=37]
+[ext_resource path="res://Script/Intro/OK.gd" type="Script" id=38]
+[ext_resource path="res://Script/Intro/CharacterSetting.gd" type="Script" id=39]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 58, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 58, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 74, 0, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 74, 58, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 74, 58, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 74, 0, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 222, 0, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 222, 58, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 222, 58, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 222, 0, 74, 58 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 11 )
+region = Rect2( 64, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 14 )
+region = Rect2( 293, 5, 16, 32 )
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 13 )
+shader_param/original_eye = Color( 0.407843, 0.168627, 0.0588235, 1 )
+shader_param/eye_color = Color( 0.407843, 0.168627, 0.0588235, 1 )
+shader_param/original_palette = ExtResource( 25 )
+shader_param/replace_palette = ExtResource( 25 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 14 )
+region = Rect2( 5, 5, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 14 )
+region = Rect2( 783, 394, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 14 )
+region = Rect2( 783, 5, 16, 32 )
+
+[sub_resource type="ShaderMaterial" id=34]
+shader = ExtResource( 13 )
+shader_param/original_eye = null
+shader_param/eye_color = null
+shader_param/original_palette = ExtResource( 25 )
+shader_param/replace_palette = ExtResource( 25 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 14 )
+region = Rect2( 101, 5, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 14 )
+region = Rect2( 298, 746, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 15 )
+region = Rect2( 80, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 15 )
+region = Rect2( 100, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 15 )
+region = Rect2( 87, 21, 20, 21 )
+
+[sub_resource type="DynamicFont" id=22]
+font_data = ExtResource( 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 19 )
+region = Rect2( 8, 6, 18, 26 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 20 )
+region = Rect2( 6, 9, 21, 23 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 28 )
+region = Rect2( 18, 29, 13, 20 )
+
+[sub_resource type="ShaderMaterial" id=39]
+shader = ExtResource( 27 )
+shader_param/original_color = Color( 0, 0.501961, 0.501961, 1 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 29 )
+region = Rect2( 77, 21, 20, 18 )
+
+[sub_resource type="DynamicFont" id=25]
+font_data = ExtResource( 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 15 )
+region = Rect2( 100, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 15 )
+region = Rect2( 80, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 37 )
+region = Rect2( 128, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 37 )
+region = Rect2( 128, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 296, 65, 66, 27 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 296, 65, 66, 27 )
+
+[sub_resource type="Animation" id=36]
+length = 3.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro/New:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/New:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro/Load:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Intro/Load:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Intro/Quit:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Intro/Quit:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Intro/Logo:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 161, -150 ), Vector2( 161, 40 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Intro:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("CanvasModulate:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("CharacterSetting:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro/New:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro/New:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Intro/Load:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Intro/Load:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Intro/Quit:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Intro/Quit:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Intro/Logo:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 161, -150 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("GradientSky:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.334, 0.334 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Intro:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Intro:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("GradientSky:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 320, 180 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("CanvasModulate:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("CharacterSetting:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "ZoomIn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("GradientSky:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.334, 0.334 ), Vector2( 0.481429, 0.481429 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Intro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Intro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GradientSky:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 320, 180 ), Vector2( 320, 260 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CharacterSetting:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+
+[node name="IntroHandler" type="Node"]
+script = ExtResource( 9 )
+
+[node name="GradientSky" type="Sprite" parent="."]
+position = Vector2( 320, 180 )
+scale = Vector2( 0.334, 0.334 )
+texture = ExtResource( 1 )
+
+[node name="Intro" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Intro"]
+margin_left = 161.0
+margin_top = -150.0
+margin_right = 561.0
+margin_bottom = 37.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New" parent="Intro" instance=ExtResource( 4 )]
+visible = false
+margin_left = 188.0
+margin_top = 255.0
+margin_right = 262.0
+margin_bottom = 313.0
+disabled = true
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+script = ExtResource( 5 )
+
+[node name="TextureRect" parent="Intro/New" index="0"]
+texture = SubResource( 6 )
+
+[node name="Load" parent="Intro" instance=ExtResource( 4 )]
+visible = false
+margin_left = 283.0
+margin_top = 255.0
+margin_right = 357.0
+margin_bottom = 313.0
+disabled = true
+texture_normal = SubResource( 7 )
+texture_pressed = SubResource( 8 )
+texture_hover = SubResource( 9 )
+script = ExtResource( 6 )
+
+[node name="TextureRect" parent="Intro/Load" index="0"]
+texture = SubResource( 10 )
+
+[node name="Quit" parent="Intro" instance=ExtResource( 4 )]
+visible = false
+margin_left = 378.0
+margin_top = 255.0
+margin_right = 452.0
+margin_bottom = 313.0
+disabled = true
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+script = ExtResource( 7 )
+
+[node name="TextureRect" parent="Intro/Quit" index="0"]
+texture = SubResource( 14 )
+
+[node name="CharacterSetting" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteRect" type="TextureRect" parent="CharacterSetting"]
+margin_left = 160.0
+margin_top = 32.0
+margin_right = 478.0
+margin_bottom = 287.0
+texture = SubResource( 16 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI_Rect" type="TileMap" parent="CharacterSetting"]
+tile_set = ExtResource( 10 )
+format = 1
+tile_data = PoolIntArray( 2, 0, 0, 3, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 2, 7, 0, 3, 65538, 0, 131072, 65543, 0, 131075, 131074, 0, 131072, 131079, 0, 131075, 196610, 0, 131072, 196615, 0, 131075, 262146, 0, 196608, 262147, 0, 196610, 262148, 0, 196610, 262149, 0, 196610, 262150, 0, 196610, 262151, 0, 196611 )
+
+[node name="Appearance" type="TextureRect" parent="CharacterSetting"]
+margin_left = 184.0
+margin_top = 48.0
+margin_right = 312.0
+margin_bottom = 240.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerAppearance" type="Control" parent="CharacterSetting/Appearance"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.5
+margin_top = 32.5
+margin_right = -79.5
+margin_bottom = -127.5
+rect_min_size = Vector2( 16, 32 )
+rect_scale = Vector2( 4, 4 )
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leg" type="TextureRect" parent="CharacterSetting/Appearance/PlayerAppearance"]
+modulate = Color( 0.129089, 0.151513, 0.703125, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="TextureRect" parent="CharacterSetting/Appearance/PlayerAppearance"]
+material = SubResource( 29 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shirts" type="TextureRect" parent="CharacterSetting/Appearance/PlayerAppearance"]
+margin_left = 4.0
+margin_top = 15.0
+margin_right = 12.0
+margin_bottom = 23.0
+texture = SubResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hair" type="TextureRect" parent="CharacterSetting/Appearance/PlayerAppearance"]
+modulate = Color( 0.72, 0.3456, 0.3456, 1 )
+margin_right = 16.0
+margin_bottom = 32.0
+texture = SubResource( 32 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arm" type="TextureRect" parent="CharacterSetting/Appearance/PlayerAppearance"]
+material = SubResource( 34 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 30 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acc" type="TextureRect" parent="CharacterSetting/Appearance/PlayerAppearance"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.875
+margin_bottom = 1.875
+texture = SubResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnClockwise" type="TextureButton" parent="CharacterSetting/Appearance"]
+margin_left = -20.0
+margin_top = 162.5
+margin_right = 20.0
+margin_bottom = 202.5
+texture_normal = SubResource( 19 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnAntiClockwise" type="TextureButton" parent="CharacterSetting/Appearance"]
+margin_left = 107.5
+margin_top = 162.5
+margin_right = 147.5
+margin_bottom = 202.5
+texture_normal = SubResource( 20 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Random" type="TextureButton" parent="CharacterSetting/Appearance"]
+margin_left = -45.0
+margin_top = -27.5
+margin_right = -5.0
+margin_bottom = 12.5
+texture_normal = SubResource( 21 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name_Setting" type="Control" parent="CharacterSetting"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="CharacterSetting/Name_Setting"]
+margin_left = 280.0
+margin_top = 49.0
+margin_right = 312.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Name
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FarmName" type="Label" parent="CharacterSetting/Name_Setting"]
+margin_left = 261.0
+margin_top = 70.0
+margin_right = 333.0
+margin_bottom = 105.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Farm Name
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Favorite" type="Label" parent="CharacterSetting/Name_Setting"]
+margin_left = 265.0
+margin_top = 91.0
+margin_right = 337.0
+margin_bottom = 145.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Favorite
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input_Name" type="LineEdit" parent="CharacterSetting/Name_Setting"]
+margin_left = 335.0
+margin_top = 47.0
+margin_right = 447.0
+margin_bottom = 67.0
+theme = ExtResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+max_length = 10
+placeholder_text = "Name"
+placeholder_alpha = 0.4
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input_FarmName" type="LineEdit" parent="CharacterSetting/Name_Setting"]
+margin_left = 335.0
+margin_top = 68.0
+margin_right = 447.0
+margin_bottom = 88.0
+theme = ExtResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+max_length = 10
+placeholder_text = "Farm Name"
+placeholder_alpha = 0.4
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input_Favorite" type="LineEdit" parent="CharacterSetting/Name_Setting"]
+margin_left = 335.0
+margin_top = 89.0
+margin_right = 447.0
+margin_bottom = 109.0
+theme = ExtResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+max_length = 10
+placeholder_text = "Favorite"
+placeholder_alpha = 0.4
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PetPreference" type="Control" parent="CharacterSetting"]
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Turtwig_shadow" type="TextureRect" parent="CharacterSetting/PetPreference"]
+margin_left = 399.0
+margin_top = 143.0
+margin_right = 415.0
+margin_bottom = 153.0
+rect_scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ditto_Shadow" type="TextureRect" parent="CharacterSetting/PetPreference"]
+margin_left = 431.0
+margin_top = 141.0
+margin_right = 454.0
+margin_bottom = 153.0
+rect_scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 30 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Marill" type="TextureButton" parent="CharacterSetting/PetPreference"]
+margin_left = 329.0
+margin_top = 121.0
+margin_right = 347.0
+margin_bottom = 147.0
+rect_scale = Vector2( 1.2, 1.2 )
+texture_normal = SubResource( 23 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minccino" type="TextureButton" parent="CharacterSetting/PetPreference"]
+margin_left = 363.0
+margin_top = 125.0
+margin_right = 384.0
+margin_bottom = 148.0
+rect_scale = Vector2( 1.2, 1.2 )
+texture_normal = SubResource( 24 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Turtwig" type="TextureButton" parent="CharacterSetting/PetPreference"]
+margin_left = 399.0
+margin_top = 121.0
+margin_right = 412.0
+margin_bottom = 141.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = SubResource( 38 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ditto" type="TextureButton" parent="CharacterSetting/PetPreference"]
+material = SubResource( 39 )
+margin_left = 429.0
+margin_top = 123.0
+margin_right = 449.0
+margin_bottom = 141.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = SubResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pet" type="Label" parent="CharacterSetting/PetPreference"]
+margin_left = 284.0
+margin_top = 129.0
+margin_right = 324.0
+margin_bottom = 145.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "Pet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skin" type="Control" parent="CharacterSetting"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skin_Next" type="TextureButton" parent="CharacterSetting/Skin"]
+margin_left = 233.0
+margin_top = 145.0
+margin_right = 253.0
+margin_bottom = 165.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = SubResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skin_Previous" type="TextureButton" parent="CharacterSetting/Skin"]
+margin_left = 172.0
+margin_top = 145.0
+margin_right = 192.0
+margin_bottom = 165.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = SubResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skin" type="Label" parent="CharacterSetting/Skin"]
+margin_left = 191.0
+margin_top = 143.0
+margin_right = 231.0
+margin_bottom = 159.0
+theme = ExtResource( 22 )
+text = "Skin"
+align = 1
+
+[node name="Skin_count" type="Label" parent="CharacterSetting/Skin"]
+margin_left = 191.0
+margin_top = 160.0
+margin_right = 231.0
+margin_bottom = 176.0
+theme = ExtResource( 22 )
+text = "1"
+align = 1
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hair" type="Control" parent="CharacterSetting"]
+margin_top = 32.0
+margin_right = 40.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hair_Next" type="TextureButton" parent="CharacterSetting/Hair"]
+margin_left = 233.0
+margin_top = 145.0
+margin_right = 253.0
+margin_bottom = 165.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = SubResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hair_Previous" type="TextureButton" parent="CharacterSetting/Hair"]
+margin_left = 172.0
+margin_top = 145.0
+margin_right = 192.0
+margin_bottom = 165.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = SubResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hair" type="Label" parent="CharacterSetting/Hair"]
+margin_left = 191.0
+margin_top = 143.0
+margin_right = 231.0
+margin_bottom = 159.0
+theme = ExtResource( 22 )
+text = "Hair"
+align = 1
+
+[node name="Hair_count" type="Label" parent="CharacterSetting/Hair"]
+margin_left = 191.0
+margin_top = 160.0
+margin_right = 231.0
+margin_bottom = 176.0
+theme = ExtResource( 22 )
+text = "1"
+align = 1
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shirts" type="Control" parent="CharacterSetting"]
+margin_top = 65.0
+margin_right = 40.0
+margin_bottom = 105.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shirts_Next" type="TextureButton" parent="CharacterSetting/Shirts"]
+margin_left = 236.0
+margin_top = 145.0
+margin_right = 256.0
+margin_bottom = 165.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = SubResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shirts_Previous" type="TextureButton" parent="CharacterSetting/Shirts"]
+margin_left = 169.0
+margin_top = 145.0
+margin_right = 189.0
+margin_bottom = 165.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = SubResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shirts" type="Label" parent="CharacterSetting/Shirts"]
+margin_left = 187.0
+margin_top = 143.0
+margin_right = 235.0
+margin_bottom = 159.0
+theme = ExtResource( 22 )
+text = "Shirts"
+align = 1
+
+[node name="Shirts_count" type="Label" parent="CharacterSetting/Shirts"]
+margin_left = 191.0
+margin_top = 160.0
+margin_right = 231.0
+margin_bottom = 176.0
+theme = ExtResource( 22 )
+text = "1"
+align = 1
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acc" type="Control" parent="CharacterSetting"]
+margin_top = 97.0
+margin_right = 40.0
+margin_bottom = 137.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acc_Next" type="TextureButton" parent="CharacterSetting/Acc"]
+margin_left = 233.0
+margin_top = 145.0
+margin_right = 253.0
+margin_bottom = 165.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = SubResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acc_Previous" type="TextureButton" parent="CharacterSetting/Acc"]
+margin_left = 172.0
+margin_top = 145.0
+margin_right = 192.0
+margin_bottom = 165.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = SubResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acc" type="Label" parent="CharacterSetting/Acc"]
+margin_left = 191.0
+margin_top = 143.0
+margin_right = 231.0
+margin_bottom = 159.0
+theme = ExtResource( 22 )
+text = "Acc"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acc_count" type="Label" parent="CharacterSetting/Acc"]
+margin_left = 191.0
+margin_top = 160.0
+margin_right = 231.0
+margin_bottom = 176.0
+theme = ExtResource( 22 )
+text = "Empty"
+align = 1
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hair_color" parent="CharacterSetting" instance=ExtResource( 34 )]
+margin_left = 275.0
+margin_top = 158.0
+margin_right = -277.0
+margin_bottom = -155.0
+
+[node name="Saturation" parent="CharacterSetting/Hair_color" index="1"]
+value = 57.0
+
+[node name="Brightness" parent="CharacterSetting/Hair_color" index="2"]
+value = 76.0
+
+[node name="Label" type="Label" parent="CharacterSetting/Hair_color"]
+margin_left = 26.0
+margin_top = 43.0
+margin_right = 66.0
+margin_bottom = 59.0
+theme = ExtResource( 22 )
+text = "Hair"
+
+[node name="Pants_color" parent="CharacterSetting" instance=ExtResource( 34 )]
+margin_left = 275.0
+margin_top = 219.0
+margin_right = -277.0
+margin_bottom = -94.0
+script = ExtResource( 36 )
+
+[node name="Hue" parent="CharacterSetting/Pants_color" index="0"]
+value = 238.0
+
+[node name="Saturation" parent="CharacterSetting/Pants_color" index="1"]
+value = 82.0
+
+[node name="Brightness" parent="CharacterSetting/Pants_color" index="2"]
+value = 70.0
+
+[node name="Label" type="Label" parent="CharacterSetting/Pants_color"]
+margin_left = 23.0
+margin_top = 42.0
+margin_right = 63.0
+margin_bottom = 58.0
+theme = ExtResource( 22 )
+text = "Pants"
+
+[node name="Eyes_color" parent="CharacterSetting" instance=ExtResource( 34 )]
+margin_left = 378.0
+margin_top = 158.0
+margin_right = -174.0
+margin_bottom = -155.0
+script = ExtResource( 35 )
+
+[node name="Hue" parent="CharacterSetting/Eyes_color" index="0"]
+value = 19.0
+
+[node name="Saturation" parent="CharacterSetting/Eyes_color" index="1"]
+value = 86.0
+
+[node name="Brightness" parent="CharacterSetting/Eyes_color" index="2"]
+value = 41.0
+
+[node name="Label" type="Label" parent="CharacterSetting/Eyes_color"]
+margin_left = 22.0
+margin_top = 42.0
+margin_right = 62.0
+margin_bottom = 58.0
+theme = ExtResource( 22 )
+text = "Eyes"
+
+[node name="OK" type="TextureButton" parent="CharacterSetting"]
+modulate = Color( 0.603922, 0.603922, 0.603922, 1 )
+margin_left = 439.0
+margin_top = 252.0
+margin_right = 503.0
+margin_bottom = 316.0
+rect_scale = Vector2( 0.5, 0.5 )
+disabled = true
+texture_normal = SubResource( 42 )
+texture_disabled = SubResource( 43 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" parent="CharacterSetting" instance=ExtResource( 4 )]
+margin_left = 569.0
+margin_top = 328.0
+margin_right = 636.0
+margin_bottom = 356.0
+texture_normal = SubResource( 17 )
+script = ExtResource( 12 )
+
+[node name="TextureRect" parent="CharacterSetting/Back" index="0"]
+texture = SubResource( 18 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 36 )
+anims/RESET = SubResource( 35 )
+anims/ZoomIn = SubResource( 15 )
+
+[connection signal="pressed" from="Intro/New" to="." method="_on_New_pressed"]
+[connection signal="mouse_entered" from="Intro/New/TextureRect" to="Intro/New" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="Intro/New/TextureRect" to="Intro/New" method="_on_TextureRect_mouse_exited"]
+[connection signal="pressed" from="Intro/Load" to="." method="_on_Load_pressed"]
+[connection signal="mouse_entered" from="Intro/Load/TextureRect" to="Intro/Load" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="Intro/Load/TextureRect" to="Intro/Load" method="_on_TextureRect_mouse_exited"]
+[connection signal="pressed" from="Intro/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="mouse_entered" from="Intro/Quit/TextureRect" to="Intro/Quit" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="Intro/Quit/TextureRect" to="Intro/Quit" method="_on_TextureRect_mouse_exited"]
+[connection signal="disable_OK" from="CharacterSetting" to="CharacterSetting/OK" method="_on_CharacterSetting_disable_OK"]
+[connection signal="enable_OK" from="CharacterSetting" to="CharacterSetting/OK" method="_on_CharacterSetting_enable_OK"]
+[connection signal="acc_changed" from="CharacterSetting/Appearance/PlayerAppearance" to="CharacterSetting/Acc/Acc_count" method="_on_PlayerAppearance_acc_changed"]
+[connection signal="hair_changed" from="CharacterSetting/Appearance/PlayerAppearance" to="CharacterSetting/Hair/Hair_count" method="_on_PlayerAppearance_hair_changed"]
+[connection signal="shirts_changed" from="CharacterSetting/Appearance/PlayerAppearance" to="CharacterSetting/Shirts/Shirts_count" method="_on_PlayerAppearance_shirts_changed"]
+[connection signal="text_changed" from="CharacterSetting/Name_Setting/Input_Name" to="CharacterSetting" method="_on_Input_Name_text_changed"]
+[connection signal="text_changed" from="CharacterSetting/Name_Setting/Input_FarmName" to="CharacterSetting" method="_on_Input_FarmName_text_changed"]
+[connection signal="text_changed" from="CharacterSetting/Name_Setting/Input_Favorite" to="CharacterSetting" method="_on_Input_Favorite_text_changed"]
+[connection signal="pet_selected" from="CharacterSetting/PetPreference" to="CharacterSetting" method="_on_PetPreference_pet_selected"]
+[connection signal="pressed" from="CharacterSetting/PetPreference/Marill" to="CharacterSetting/PetPreference" method="_on_Marill_pressed"]
+[connection signal="pressed" from="CharacterSetting/PetPreference/Minccino" to="CharacterSetting/PetPreference" method="_on_Minccino_pressed"]
+[connection signal="pressed" from="CharacterSetting/PetPreference/Turtwig" to="CharacterSetting/PetPreference" method="_on_Turtwig_pressed"]
+[connection signal="pressed" from="CharacterSetting/PetPreference/Ditto" to="CharacterSetting/PetPreference" method="_on_Ditto_pressed"]
+[connection signal="pressed" from="CharacterSetting/Skin/Skin_Next" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Skin_Next_pressed"]
+[connection signal="pressed" from="CharacterSetting/Skin/Skin_Next" to="CharacterSetting/Skin/Skin_count" method="_on_Skin_Next_pressed"]
+[connection signal="pressed" from="CharacterSetting/Skin/Skin_Previous" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Skin_Previous_pressed"]
+[connection signal="pressed" from="CharacterSetting/Skin/Skin_Previous" to="CharacterSetting/Skin/Skin_count" method="_on_Skin_Previous_pressed"]
+[connection signal="pressed" from="CharacterSetting/Hair/Hair_Next" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Hair_Next_pressed"]
+[connection signal="pressed" from="CharacterSetting/Hair/Hair_Previous" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Hair_Previous_pressed"]
+[connection signal="pressed" from="CharacterSetting/Shirts/Shirts_Next" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Shirts_Next_pressed"]
+[connection signal="pressed" from="CharacterSetting/Shirts/Shirts_Previous" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Shirts_Previous_pressed"]
+[connection signal="pressed" from="CharacterSetting/Acc/Acc_Next" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Acc_Next_pressed"]
+[connection signal="pressed" from="CharacterSetting/Acc/Acc_Previous" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Acc_Previous_pressed"]
+[connection signal="hair_color_changed" from="CharacterSetting/Hair_color" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Hair_color_hair_color_changed"]
+[connection signal="pants_color_changed" from="CharacterSetting/Pants_color" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Pants_color_pants_color_changed"]
+[connection signal="eyes_color_changed" from="CharacterSetting/Eyes_color" to="CharacterSetting/Appearance/PlayerAppearance" method="_on_Eyes_color_eyes_color_changed"]
+[connection signal="pressed" from="CharacterSetting/OK" to="CharacterSetting" method="_on_OK_pressed"]
+[connection signal="pressed" from="CharacterSetting/Back" to="." method="_on_Back_pressed"]
+[connection signal="mouse_entered" from="CharacterSetting/Back/TextureRect" to="CharacterSetting/Back" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterSetting/Back/TextureRect" to="CharacterSetting/Back" method="_on_TextureRect_mouse_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="Intro/New"]
+[editable path="Intro/Load"]
+[editable path="Intro/Quit"]
+[editable path="CharacterSetting/Hair_color"]
+[editable path="CharacterSetting/Pants_color"]
+[editable path="CharacterSetting/Eyes_color"]
+[editable path="CharacterSetting/Back"]

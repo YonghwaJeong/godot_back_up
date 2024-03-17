@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Player/Player.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Skin_Palettes/skin0.png" type="Texture" id=2]
+[ext_resource path="res://Theme/PlayerAppearance.gdshader" type="Shader" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 293, 5, 16, 32 )
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 3 )
+shader_param/original_palette = ExtResource( 2 )
+shader_param/replace_palette = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 5, 5, 16, 32 )
+
+[sub_resource type="ShaderMaterial" id=34]
+shader = ExtResource( 3 )
+shader_param/original_palette = ExtResource( 2 )
+shader_param/replace_palette = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 101, 5, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 783, 394, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 783, 5, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 1 )
+region = Rect2( 270, 11, 1, 2 )
+
+[node name="PlayerAppearance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -624.0
+margin_bottom = -328.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="TextureRect" parent="."]
+material = SubResource( 29 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arm" type="TextureRect" parent="."]
+material = SubResource( 34 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 30 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shirts" type="TextureRect" parent="."]
+margin_left = 4.0
+margin_top = 15.0
+margin_right = 12.0
+margin_bottom = 23.0
+texture = SubResource( 31 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hair" type="TextureRect" parent="."]
+margin_right = 16.0
+margin_bottom = 32.0
+texture = SubResource( 32 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Eyes" type="Control" parent="."]
+modulate = Color( 0.282353, 0.282353, 0.282353, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightEye" type="TextureRect" parent="Eyes"]
+margin_left = 6.0
+margin_top = 11.0
+margin_right = 7.0
+margin_bottom = 13.0
+texture = SubResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftEye" type="TextureRect" parent="Eyes"]
+margin_left = 9.0
+margin_top = 11.0
+margin_right = 10.0
+margin_bottom = 13.0
+texture = SubResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

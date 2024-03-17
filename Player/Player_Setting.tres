@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Player/Player_Setting.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+player_name = "aa"
+farm_name = "aa"
+player_favorite = "aa"
+pet = "Turtwig"
+spouse = ""
+money = 500
+money_earned = 0
+skin = 1
+hair = 0
+shirts = 0
+acc = 19
+hair_color = Color( 0.72, 0.3456, 0.3456, 1 )
+pants_color = Color( 0.129089, 0.151513, 0.703125, 1 )
+eyes_color = Color( 0.407843, 0.168627, 0.0588235, 1 )

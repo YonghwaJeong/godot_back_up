@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Farm/Crops.png" type="Texture" id=1]
+[ext_resource path="res://Script/Crops/Crops.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.12311
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 1, 73, 96, 18 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 16 )
+
+[node name="Crops" type="Node2D"]
+script = ExtResource( 2 )
+max_stage = 4
+day_for_stage = PoolIntArray( 1, 1, 1, 1 )
+
+[node name="PlantCollisionArea" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlantCollisionArea"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+texture = SubResource( 1 )
+hframes = 6
+
+[node name="PlantArea" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlantArea"]
+modulate = Color( 0.458824, 0.882353, 0.196078, 1 )
+position = Vector2( 0, -2.38419e-07 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 3 )
+
+[connection signal="mouse_entered" from="PlantArea" to="." method="_on_PlantArea_mouse_entered"]
+[connection signal="mouse_exited" from="PlantArea" to="." method="_on_PlantArea_mouse_exited"]
